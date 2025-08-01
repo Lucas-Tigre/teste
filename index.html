@@ -1,1 +1,100 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste de Joystick</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #222;
+            color: white;
+            padding: 20px;
+        }
+        
+        #joystick-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 30px auto;
+            background-color: #333;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        
+        #joystick-indicator {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: #FF5722;
+            border-radius: 50%;
+            top: 120px;
+            left: 120px;
+            transition: transform 0.1s;
+        }
+        
+        #data-display {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            min-width: 250px;
+            text-align: center;
+            font-family: monospace;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        
+        .axis {
+            margin: 5px 0;
+            color: #FFC107;
+        }
+        
+        #connection-status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .connected {
+            background-color: #4CAF50;
+        }
+        
+        .disconnected {
+            background-color: #F44336;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teste Visual de Joystick</h1>
+    
+    <div id="joystick-container">
+        <div id="joystick-indicator"></div>
+    </div>
+    
+    <button id="connect-btn">Conectar Joystick</button>
+    
+    <div id="data-display">
+        <div class="axis">Eixo X: <span id="x-value">0</span></div>
+        <div class="axis">Eixo Y: <span id="y-value">0</span></div>
+        <div class="axis">Botão: <span id="btn-value">NÃO PRESSIONADO</span></div>
+    </div>
+    
+    <div id="connection-status" class="disconnected">
+        Status: Desconectado
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
